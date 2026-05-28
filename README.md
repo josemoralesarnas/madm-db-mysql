@@ -126,7 +126,7 @@ Internal platform role responsible for reviewing artist onboarding requests, ver
 
 # E/R Diagram
 
-![Diagrama diseñado con draw.io](docs/ER_diagram.svg)
+![Diagrama diseñado con draw.io](docs/er_diagram.svg)
 
 Diagrama diseñado con draw.io
 
