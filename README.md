@@ -126,12 +126,12 @@ Internal platform role responsible for reviewing artist onboarding requests, ver
 
 # E/R Diagram
 
-![Diagrama diseñado con draw.io](attachment:b9ecfdff-c4ba-4429-8a40-319781c03308:Diagrama_conceptual_ER.drawio.svg)
+![Diagrama diseñado con draw.io](docs/ER_diagram.svg)
 
 Diagrama diseñado con draw.io
 
 # Relational model
 
-![Diagrama diseñado con draw.io](attachment:93fb6727-2ba6-4d91-afe5-e80ae3e39f40:Diagrama_conceptual_ER-Page-2.drawio_(1).svg)
+![Diagrama diseñado con draw.io](docs/relational_model.svg)
 
 Diagrama diseñado con draw.io
