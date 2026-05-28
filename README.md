@@ -1,18 +1,37 @@
+# MADM
+
+Creado: 26 de mayo de 2026 10:32
+
+![First logo idea designed by me](docs/logo.png)
+
+First logo idea designed by me
+
+# MADM
+
+> Your music platform for Madrid-based artists.
+> 
+
+The objective of this project was to design and implement a complete information system based on a realistic business case. The work required analysing the needs of an organisation, creating a conceptual and relational database model, implementing it in MySQL, inserting sample data, writing business-oriented queries, and adding database administration and programming elements such as views, indexes, users, procedures, triggers, and events.
+
+I chose MADM because it is a project connected to my interests as an artist and because it represents a realistic platform with many information needs: users, artists, music catalogues, subscriptions, playlists, verification processes, orders, products, and inventory. This made it a strong case for practising database design in a real context instead of building a simple or disconnected set of tables.
+
+---
+
 # Analysis
 
 ## 1. Chosen organization
 
-**MADM** is a digital music streaming platform built exclusively around artists based in Madrid. Its mission is to give visibility to local talent by creating a curated, closed ecosystem where every piece of content originates from the city. Beyond streaming, MADM connects listeners directly with artists through a built-in store where artists can sell merchandise, physical records, and concert tickets, turning passive listeners into active supporters of the Madrid music scene.
+MADM is a digital music streaming platform built around artists based in Madrid. Its mission is to give visibility to local talent by creating a curated ecosystem focused on the city’s music scene. Beyond streaming, MADM connects listeners directly with artists through a built-in store where artists can sell merchandise, physical records, and concert tickets, turning passive listeners into active supporters of Madrid’s local music community.
 
 ---
 
 ## 2. Problem or Need It Solves
 
-Emerging artists in Madrid face a structural visibility problem on global streaming platforms, where algorithmic competition makes it nearly impossible to reach a relevant audience without an already established following.
+Emerging artists in Madrid face a visibility problem on global streaming platforms, where algorithmic competition makes it difficult to reach a relevant audience without an already established following.
 
-MADM addresses this by removing that competition entirely. On this platform, the catalog is exclusively Madrid-based, which means every listener is already a potential fan, and every search or recommendation stays within the local scene. Artists do not compete against global acts for attention; they compete on the quality of their music alone.
+MADM addresses this by creating a local-first platform focused exclusively on Madrid-based artists. This reduces competition with global acts and makes music discovery more relevant for listeners who are already interested in the local scene. Searches, browsing, playlists, and catalog exploration remain within the Madrid music ecosystem.
 
-At the same time, MADM recognises that music alone is not enough to sustain an independent artist. The integrated store allows artists to monetise their identity beyond streams, offering physical products and live experiences directly to their audience without relying on third-party services.
+At the same time, MADM recognises that music streaming alone is not always enough to sustain an independent artist. The integrated store allows artists to monetise their identity beyond streams, offering merchandise, physical records, and concert tickets directly to their audience.
 
 ---
 
@@ -22,7 +41,7 @@ At the same time, MADM recognises that music alone is not enough to sustain an i
 
 ### Users and Access
 
-Listener accounts (free and premium), subscriptions, plans, and payments.
+Listener accounts, free and paid plans, active subscriptions, subscription periods, and payment methods.
 
 </aside>
 
@@ -30,7 +49,7 @@ Listener accounts (free and premium), subscriptions, plans, and payments.
 
 ### Music catalog
 
-Artists, albums, songs, genres, collaborations, and release dates.
+Artists, albums, songs, genres, collaborations, release dates, and song-album positioning.
 
 </aside>
 
@@ -38,7 +57,7 @@ Artists, albums, songs, genres, collaborations, and release dates.
 
 ### Administration
 
-Validate artists.
+Administrator profiles, artist onboarding requests, review status, assigned reviewers, and artist verification.
 
 </aside>
 
@@ -46,15 +65,7 @@ Validate artists.
 
 ### User Interaction
 
-Play history, star ratings on songs, artist follows, playlist creation and following (premium only), album collections, and personalization preferences.
-
-</aside>
-
-<aside>
-
-### Artist verification
-
-Artist onboarding requests, review status, verification history, and review team management.
+Play history, song stars, artist follows, playlist creation for premium users, playlist following, and album collections.
 
 </aside>
 
@@ -62,7 +73,7 @@ Artist onboarding requests, review status, verification history, and review team
 
 ### Artist Store
 
-Products offered by artists (merchandise, physical records, and concert tickets), product variants (sizes, formats, ticket categories), real-time inventory per variant, and order management.
+Products offered by artists, product variants, stock per variant, customer orders, and order lines.
 
 </aside>
 
@@ -71,26 +82,26 @@ Products offered by artists (merchandise, physical records, and concert tickets)
 ## 4. Main Processes
 
 **1. Artist registration and verification**
-An artist submits an onboarding request through the platform. An MADM administrator reviews the application and verifies Madrid residency. The request is then approved or rejected, with an assigned reviewer.
+An artist submits an onboarding request through the platform. A MADM administrator reviews the application and verifies Madrid residency. The request is then approved or rejected, with an assigned reviewer and review date.
 
 **2. Content publishing**
-Once verified, the artist can upload songs and albums to the platform. All published content becomes immediately available in the catalog for every listener, regardless of their subscription plan.
+Once verified, the artist can publish songs and albums on the platform. Published content becomes available in the catalog for every listener, regardless of their subscription plan.
 
 **3. Music consumption**
-Listeners browse and play songs from the catalog, give STARs to tracks, follow artists, and save albums to their personal collection. Every play is recorded individually, generating a full listening history per user.
+Listeners browse and play songs from the catalog, star tracks, follow artists, and save albums to their personal collection. Every play is recorded individually, generating a listening history per user.
 
 **4. Subscription and payment management**
-Users can upgrade to the premium plan at any time. The system manages the active subscription period, renewal dates, and associated payment records, allowing listeners to downgrade as needed.
+Users can have free, premium, or family plans. The system manages the active subscription period, plan type, status, and payment method.
 
 **5. Playlist management**
-Premium listeners can create their own playlists, add or remove songs, and make them available for other users to follow. Playlist ownership and follower relationships are tracked independently.
+Premium listeners can create and manage their own playlists. Songs are added to playlists with a defined position, and other users can follow public playlists. Playlist ownership and follower relationships are tracked independently.
 
 **6. Artist store and order management**
-Artists can list products in their store, including merchandise, physical records, and concert tickets, each with defined variants and real inventory tracking. Listeners can place orders, which are recorded as individual order lines linked to specific product variants.
+Artists can list products in their store, including merchandise, physical records, and concert tickets. Each product can have variants, such as sizes, editions, or ticket categories, with stock tracked per variant. Listeners can place orders, which are recorded as order lines linked to specific product variants.
 
 ---
 
-## **5. User Profiles**
+## **5. Functional User Profiles**
 
 <aside>
 
@@ -104,7 +115,7 @@ Artists can list products in their store, including merchandise, physical record
 
 ### **Premium listener**
 
-Includes everything available in the free tier, with the addition of playlist creation and management, the ability to follow other users' playlists, and access to personalization features. Requires an active paid subscription.
+Includes everything available in the free tier, with the addition of playlist creation and management. Premium access requires an active paid subscription.
 
 </aside>
 
@@ -112,7 +123,7 @@ Includes everything available in the free tier, with the addition of playlist cr
 
 ### Artist
 
-Holds a separate account from any listener profile. Once verified by the MADM team, can upload songs and albums to the platform, manage their public profile and catalog, and operate their own store to sell merchandise, physical records, and concert tickets.
+An artist is an account role within the platform. Once verified by the MADM team, the artist can manage their public profile, publish songs and albums, and operate their own store to sell merchandise, physical records, and concert tickets.
 
 </aside>
 
@@ -124,17 +135,53 @@ Internal platform role responsible for reviewing artist onboarding requests, ver
 
 </aside>
 
+The platform has functional user profiles such as free listener, premium listener, artist and MADM administrator. In addition, the database defines technical access profiles to control how different services or internal operators can access the data. These database users are not listener accounts; they are MySQL users created to separate responsibilities and apply the principle of least privilege.
+
+---
+
+## 6. Technical Access Profiles
+
+<aside>
+
+### **Database administrator**
+
+Technical MySQL profile with full privileges over the madm database. This profile is intended for trusted technical staff responsible for maintaining the database structure, managing permissions, and solving critical issues. It should be used carefully because it can read, insert, update, delete, and modify any database object.
+
+</aside>
+
+<aside>
+
+### **Read-only profile**
+
+Technical MySQL profile designed for reporting, auditing, or data analysis. It can only read information from the database through SELECT queries and cannot modify any data. This makes it useful for dashboards or external review without risking accidental changes.
+
+</aside>
+
+<aside>
+
+### **Store operator**
+
+Technical MySQL profile focused on order and inventory management. It can read, insert, and update orders and order lines, and can read or update inventory stock. It cannot modify sensitive areas such as user accounts, subscriptions, artist verification, administrators, or the music catalog.
+
+</aside>
+
+---
+
 # E/R Diagram
 
 ![Diagrama diseñado con draw.io](docs/er_diagram.svg)
 
 Diagrama diseñado con draw.io
 
+---
+
 # Relational model
 
 ![Diagrama diseñado con draw.io](docs/relational_model.svg)
 
 Diagrama diseñado con draw.io
+
+---
 
 # Conclusion
 
