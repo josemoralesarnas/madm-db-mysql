@@ -1,12 +1,10 @@
-# MADM
-
-Creado: 26 de mayo de 2026 10:32
+# MADM - Your music platform for Madrid-based artists
 
 ![First logo idea designed by me](docs/logo.png)
 
 First logo idea designed by me
 
-# MADM
+# Objective and Idea
 
 > Your music platform for Madrid-based artists.
 > 
